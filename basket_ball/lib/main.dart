@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(PointsCounter());
+  runApp(const PointsCounter());
 }
 
 class PointsCounter extends StatefulWidget {
+  const PointsCounter({super.key});
+
   @override
   State<PointsCounter> createState() => _PointsCounterState();
 }
@@ -21,7 +23,7 @@ class _PointsCounterState extends State<PointsCounter> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text('points Counter'),
+          title: const Text('points Counter'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -29,12 +31,12 @@ class _PointsCounterState extends State<PointsCounter> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
+                SizedBox(
                   height: 500,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      const Text(
                         'Team A',
                         style: TextStyle(
                           fontSize: 33,
@@ -42,22 +44,21 @@ class _PointsCounterState extends State<PointsCounter> {
                       ),
                       Text(
                         '$teamAScore',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 150,
                         ),
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
-                          minimumSize: Size(120, 50),
+                          minimumSize: const Size(120, 50),
                         ),
                         onPressed: () {
                           setState(() {
                             teamAScore += 1;
-                            print('Team A: $teamAScore');
                           });
                         },
-                        child: Text(
+                        child: const Text(
                           '1 points',
                           style: TextStyle(
                             color: Colors.black,
@@ -70,17 +71,16 @@ class _PointsCounterState extends State<PointsCounter> {
                       // ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           backgroundColor: Colors.blue,
-                          minimumSize: Size(120, 50),
+                          minimumSize: const Size(120, 50),
                         ),
                         onPressed: () {
                           setState(() {
                             teamAScore += 2;
-                            print('Team A: $teamAScore');
                           });
                         },
-                        child: Text(
+                        child: const Text(
                           '2 points',
                           style: TextStyle(
                             color: Colors.black,
