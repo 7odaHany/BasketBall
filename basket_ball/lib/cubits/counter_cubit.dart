@@ -15,4 +15,9 @@ class CounterCubit extends Cubit<CounterState> {
       emit(CounterBIncrementState()); //info: emit the new state
     }
   }
+  void resetScore() {
+    teamAScore = 0;
+    teamBScore = 0;
+    emit(CounterResetState()); //info: emit the new state
+  }
 }
